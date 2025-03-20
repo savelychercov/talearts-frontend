@@ -1,0 +1,47 @@
+:root {
+    /* Основные цвета */
+    --bg-color: #121212;        /* Фон сайта (темный, но не черный) */
+    --primary-color: #1f1f1f;   /* Основные блоки, карточки, виджеты */
+    --secondary-color: #252525; /* Для второстепенных блоков, хедеров */
+
+    /* Текст */
+    --text-color: #e0e0e0;      /* Основной цвет текста */
+    --text-muted: #a0a0a0;      /* Блеклый текст, второстепенные элементы */
+
+    /* Акценты */
+    --accent-color: #ff6b6b;    /* Яркий акцент (например, кнопки, ссылки) */
+    --accent-hover: #ff5252;    /* Акцент при наведении */
+
+    /* Границы и разделители */
+    --border-color: #333;       /* Границы и линии */
+    --shadow-color: rgba(0, 0, 0, 0.6); /* Тени */
+
+    /* Элементы UI */
+    --button-bg: #292929;       /* Фон кнопок */
+    --button-hover: #333333;    /* Фон кнопок при наведении */
+    --input-bg: #1e1e1e;        /* Фон полей ввода */
+    --input-border: #444;       /* Границы полей ввода */
+
+    /* Уведомления */
+    --success-color: #4caf50;   /* Цвет успеха */
+    --error-color: #f44336;     /* Цвет ошибки */
+    --warning-color: #ff9800;   /* Цвет предупреждения */
+}
+
+html, body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+    width: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+section {
+    text-align: center;
+    min-height: fit-content;
+}

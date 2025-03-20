@@ -1,0 +1,127 @@
+#comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+#comments h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.comments-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Автоматическое заполнение строк с минимальной шириной 200px */
+    gap: 20px; /* Интервал между комментариями */
+    justify-items: center; /* Центрирование элементов по горизонтали */
+    align-items: start; /* Выравнивание элементов по верхнему краю */
+}
+
+.comment {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box; /* Включает padding и border в ширину */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Пространство между элементами */
+}
+
+.comment:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.comment-header {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.comment-content {
+    word-wrap: break-word;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.comment-form {
+    max-width: 40%;
+    width: 70%;
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.comment-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.form-group {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.comment-form button[type="submit"] {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment-form button[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}

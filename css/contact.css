@@ -1,0 +1,14 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 20px 0px;
+    background-color: var(--secondary-color);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}

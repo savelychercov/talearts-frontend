@@ -1,0 +1,76 @@
+#join-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+#join-team h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.form-container {
+    width: 40%;
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+#joinForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.join-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.join-form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.join-form-group input,
+.join-form-group select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+#joinButton {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#joinButton:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+#formMessage {
+    font-size: 1rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 10px;
+}

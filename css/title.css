@@ -1,0 +1,32 @@
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: left;
+    gap: 20px;
+    background-color: var(--primary-color);
+}
+
+#title img, #title h1 {
+    flex: 1;
+    max-width: 50%;
+}
+
+#title img {
+    max-height: 500px;
+    filter: invert(1);
+    mix-blend-mode: lighten;
+    width: auto;
+    object-fit: contain;
+}
+
+#title h1 {
+    font-size: 10vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: var(--text-color);
+}
