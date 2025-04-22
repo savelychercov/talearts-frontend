@@ -2,7 +2,7 @@ const host = "http://localhost:8000";
 
 function formatDate(isoString) {
     // Убираем микросекунды из строки
-    const dateWithoutMicroseconds = isoString.split('.')[0]; // Разделяем по точке и оставляем только основную часть
+    const dateWithoutMicroseconds = isoString.split('.')[0];
     const dateObj = new Date(dateWithoutMicroseconds);
 
     if (isNaN(dateObj.getTime())) {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     
         try {
-            let response = await fetch("http://localhost:8000/comments?name="+name+"&content="+content, {
+            let response = await fetch(host+"/comments?name="+name+"&content="+content, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
             alert("Комментарий отправлен!");
             document.getElementById("commentForm").reset();
-            loadComments(); // Перезагрузить список комментариев
+            loadComments(); 
         } catch (error) {
             console.error("Ошибка запроса:", error);
             console.error("Текст ошибки:", error.message);
@@ -100,18 +100,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function loadVacancies() {
     try {
-        let response = await fetch("http://localhost:8000/vacancies"); // Запрос к API
+        let response = await fetch(host+"/vacancies"); 
         if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
         
-        let vacancies = await response.json(); // Получаем JSON с вакансиями
-        let select = document.getElementById("position"); // Находим селект
+        let vacancies = await response.json(); 
+        let select = document.getElementById("position"); 
 
-        select.innerHTML = '<option value="">Выберите вакансию</option>'; // Очищаем перед вставкой
+        select.innerHTML = '<option value="">Выберите вакансию</option>'; 
 
         vacancies.forEach(vacancy => {
             let option = document.createElement("option");
-            option.value = vacancy.toLowerCase(); // Устанавливаем значение (например, "разработчик")
-            option.textContent = vacancy; // Отображаемый текст
+            option.value = vacancy.toLowerCase(); 
+            option.textContent = vacancy; 
             select.appendChild(option);
         });
 
@@ -120,20 +120,19 @@ async function loadVacancies() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadVacancies); // Загружаем при загрузке страницы
+document.addEventListener("DOMContentLoaded", loadVacancies); 
 
+// Функция отправки заявки
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("joinForm").addEventListener("submit", async function (event) {
-        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        event.preventDefault(); 
 
-        // Получаем значения полей формы
         const firstName = document.getElementById("firstName").value.trim();
         const lastName = document.getElementById("lastName").value.trim();
         const email = document.getElementById("email").value.trim();
         const phone = document.getElementById("phone").value.trim();
         const position = document.getElementById("position").value.trim();
 
-        // Проверяем обязательные поля
         if (!firstName || !lastName || !email || !position) {
             document.getElementById("formMessage").textContent = "Заполните все обязательные поля!";
             document.getElementById("formMessage").style.color = "red";
@@ -141,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            // Формируем строку запроса
             let queryParams = new URLSearchParams({
                 name: firstName,
                 surname: lastName,
@@ -164,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 throw new Error(`Ошибка HTTP: ${response.status}`);
             }
 
-            // Очищаем форму
             document.getElementById("joinForm").reset();
             document.getElementById("formMessage").textContent = "Заявка успешно отправлена!";
             document.getElementById("formMessage").style.color = "green";
